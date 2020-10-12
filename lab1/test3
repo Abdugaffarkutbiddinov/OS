@@ -1,0 +1,14 @@
+#!/bin/bash
+echo "SELECT your option:
+1.nano
+2.vi
+3.links
+4.exit"
+option=""
+read option
+case "$option" in
+"1") nano;;
+"2") vi;;
+"3") links;;
+"4") exit 0
+esac

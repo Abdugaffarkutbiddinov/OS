@@ -1,0 +1,10 @@
+#!/bin/bash
+v=""
+read v
+res=""
+while [[ "$v" != "q" ]]
+do
+   res+="$v"
+   read v
+done
+echo "$res"

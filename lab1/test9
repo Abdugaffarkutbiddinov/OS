@@ -1,0 +1,17 @@
+#!/bin/bash
+
+let sum=0
+
+for f in /var/log/*;
+do
+if [[ $f =~ .+\.log ]]
+then
+if [ -r $f ]
+then
+lines=$(wc -l $f | awk '{print $1}')
+let sum=$sum+$lines
+fi
+fi
+done
+echo $sum
+
