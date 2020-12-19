@@ -1,0 +1,11 @@
+#!/bin/bash
+
+##N=$(cat report.log)
+##let N="$N"/10
+N=30000000
+let N="$N"/25
+echo "$N"
+for(( i = 0; i < 30; i++ )); do
+    ./newmem.bash "$N" &
+     sleep 1
+done
