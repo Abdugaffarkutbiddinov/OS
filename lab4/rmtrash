@@ -1,0 +1,27 @@
+#!/bin/bash
+#file=.trash
+file="$*"
+if [ $# == 0 ]; then
+  echo "invalid sign"
+  exit 1
+  fi
+
+if [ ! -f "$file" ]; then
+  echo "no such a file"
+  exit 0
+fi
+
+if [ ! -d "$HOME/.trash" ]; then
+mkdir "$HOME/.trash"
+fi
+
+if [ "$(ls -A $HOME/.trash)" ]; then
+  count=$(ls -A "$HOME/.trash" | wc -l)
+  let count="$count"+1
+else
+  count=1
+fi
+ln "$file" "$HOME/.trash/$count"
+rm "$file"
+
+printf "%s %s\n" "$PWDs/$1" "$count" >> "$HOME/.trash.log"

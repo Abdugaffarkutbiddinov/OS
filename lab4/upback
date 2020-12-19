@@ -1,0 +1,12 @@
+#!/bin/bash
+latest_backup=$(find "$HOME" -regex "^$HOME/BACKUP-[0-9]+-[0-9]+-[0-9]+$" -type d | tail -n 1)
+if [ ! -z "$latest_backup" ]; then
+     for file in "$latest_backup"/*; do
+           if [[ -z $(find "$latest_backup" -regex "$file\.[0-9]+-[0-9]+-[0-9]+") && ! "$file" =~ .+\.[0-9]+-[0-9]+-[0-9]+ ]]; then
+                  if [ ! -d "$HOME/restore" ]; then
+                            mkdir "$HOME/restor"
+                  fi
+                  cp -r "$file" "$HOME/restore/"
+            fi
+     done
+fi

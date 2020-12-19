@@ -1,0 +1,57 @@
+#!/bin/bash
+real_date=$(date --rfc-3339=date)
+latest_BU=$(find "$HOME" -regex "^$HOME/BACKUP-[0-9]+-[0-9]+-[0-9]+$" -type d | tail -n 1)
+if [ ! -z "$latest_BU" ]; then
+    name_backup=$(basename "$latest_BU")
+    latest_date=${name_backup:7}
+    difference=$(( ($(date -d "$real_date" +%s) - $(date -d "$latest_date" +%s)) / 86400))
+    if [[ difference -le 7 ]]; then
+            created=0
+            backup="$latest_backup"
+     else
+            backup="$HOME/BACKUP-$real_date"
+            mkdir "$backup"
+            created=1
+     fi
+else
+      backup="$HOME/BACKUP-$real_date"
+      mkdir "$backup"
+      created=1
+fi
+
+if [[ "$created" == "1" ]]; then
+    cp -r "$HOME/source/." "$backup/"
+    printf "%s %s\n" $(basename "$backup") "$real_date" > "$HOME/backup-report"
+    for file in "$backup"/*; do
+         printf "%s\n" $(basename "$file") >> "$HOME/backup-report"
+    done
+else
+    changed=0
+    touch .new_files .updated_files
+    for file in "$HOME/source"/*; do
+         name_file=$(basename "$file")
+         if [ ! -z $(find "backup" -name "$name_file") ]; then
+               size=$(wc -c < "$file")
+               backup_size=$(wc -c < "$backup/$name_file")
+               if [ "$size" != "$backup_size" ]; then
+                name=$(basename "$backup")
+                date=${name:7}
+                mv "$backup/$name_file" "$backup/$name_file.$date"
+                cp -r "$file" "$backup/"
+                echo "$name_file $name_file.$date" >> .updated_files
+                changed=1
+                fi
+         else
+                cp -r "$file" "$backup/"
+                echo "$name_file" >> .new_files
+                changed=1
+
+         fi
+  done
+  if [[ "$changed" == "1" ]]; then
+         printf "%s %s\n" $(basename "$backup") "$real_date" >> "HOME/backup-report"
+         cat .new_files >> "$HOME/backup-report"
+         cat .updated_files >> "$HOME/backup-report"
+  fi
+    rm .new_files .updated_files
+fi

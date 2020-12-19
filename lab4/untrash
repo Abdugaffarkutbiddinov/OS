@@ -1,0 +1,38 @@
+#!/bin/bash
+trash_log="$HOME/.trash.log"
+trash_dir="$HOME/.trash"
+
+if [[ $# == 0 ]]; then
+echo "invalid sign"
+fi
+
+#if [ ! -z $(dirname "${1}") ]; then
+#   name=$(basename "$1")
+#   echo " provided path $1 instead of raw name. Possible fix $name"
+#   exit 0
+#fi
+while Input_File= read -r line; do
+   Input_File=" " read -ra arr <<< "$line"
+   path="${arr[0]}"
+   name="${path##*/}"
+   if [[ "$name" == "$1" ]]; then
+       read -e -p "Do you want to restore $path? (yes/no): " ans < /dev/tty
+       if [[ "$ans" == "yes" ]]; then
+            if [ ! -d $(dirname "${path}") ]; then
+                 echo "directory doesnt exist. it will be restored in $HOME"
+                 full_path="$HOME"
+             else
+                 full_path=$(dirname "${path}")
+             fi
+             while [ -f "$full_path/$name" ]; do
+                   printf "$full_path/$name change the file name: "
+                   read name < /dev/tty
+              done
+              ln "$trash_dir/${arr[1]}" "$full_path/$name"
+              rm "$trash_dir/${arr[1]}"
+              echo "$full_path/$name restore completed"
+              break
+        fi
+  fi
+
+done < "$trash_log"
