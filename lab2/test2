@@ -1,0 +1,4 @@
+#!/bin/bash
+#ps aux | awk '$11~/^\/sbin\//{printf "%s \n", $2}' > temp2
+ps -Ao pid,command | grep -E "* /sbin/" | head -n -1 > temp2 
+

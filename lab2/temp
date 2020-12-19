@@ -1,0 +1,7 @@
+7
+user:/usr/lib/systemd/systemd
+user:(sd-pam)
+user:-bash
+user:/bin/bash
+user:ps
+user:awk

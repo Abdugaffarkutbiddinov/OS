@@ -1,0 +1,10 @@
+#!/bin/bash
+artarr=$(awk -F " : " -v pattern="Parent_ProcessID=$1 :" '$0~pattern {print $3}' file4 | awk -F '=''{print $2}')
+let M=0
+let count=0
+for art in $artarr; do
+M=$(bc<<<"scale=2;$M+$art")
+let count=$count+1
+done
+M=$(bc<<<"scale=2;$M/$count")
+echo $M

@@ -1,0 +1,4 @@
+#!/bin/bash
+ps h -eo s,pid | awk '{if ($1 == "S") print $1,$2;}'
+#ps aux > tempScript
+

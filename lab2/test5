@@ -1,0 +1,21 @@
+#!/bin/bash
+ppidarr=$(awk -F " : " '{print $2}' file4 | uniq | awk -F '=' '{print $2}')
+for ppid in $ppidarr; do
+artarr=$(awk -F " : "  -v pattern="Parent_ProcessID=$1 :" '$0~pattern {print $3}' file4 | awk -F '=' '{print $2}')
+let M=0
+let counter=0
+
+for art in $arts; do
+M=$(bc<<<"scale=2;$M+$art")
+let counter=$counter+1
+done
+M=$(bc<<<"scale=2;$M/$counter")
+#M=$(./subtest5 $ppid)
+string="Average_Sleeping_Children_of_ParentID=$ppid is $M"
+laststring=$(awk -v patt="Parent_ProcessID=$ppid " '$0~patt {print NR}' file4 | tail -n 1)
+oldinput=$(sed "${laststring}q;d" file4)
+sed "${last}s/$oldinput/$oldinput\n$string\n/" file4 > test
+cat test > file4
+done
+rm test
+nano file4

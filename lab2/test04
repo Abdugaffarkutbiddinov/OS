@@ -1,0 +1,17 @@
+#!/bin/bash
+
+#cat /proc/1/sched > temp04
+for pid in /proc/*; do
+if [[ $pid =~ /proc/[0-9]+ ]]; then
+ppid=$(awk '/PPid/ {print $2}' "$pid/status")
+sumer=$(awk '/sum_exec_runtime/ {print $3}' "$pid/sched")
+nrs=$(awk '/nr_switches/ {print $3}' "$pid/sched")
+ART=$(bc<<<"scale=4;$sumer/$nrs")
+IFS='/' read -ra mass <<< "$pid"
+pid=${mass[2]}
+printf "ProcessId=%s : Parent_ProcessID=%s : Average_Running_Time=%f\n" $pid $ppid $ART >> temper
+fi
+done
+sort -k 3 -V temper > file4
+rm temper
+

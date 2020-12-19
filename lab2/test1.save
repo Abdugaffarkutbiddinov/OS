@@ -1,0 +1,8 @@
+#!/bin/bash
+
+ps -u user -o pid,command  aux | wc -l >> temp
+
+
+
+
+

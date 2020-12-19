@@ -1,0 +1,100 @@
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.1  0.7 179196 13624 ?        Ss   10:03   0:07 /usr/lib/systemd/systemd --switched-root --system --deserialize 17
+root           2  0.0  0.0      0     0 ?        S    10:03   0:00 [kthreadd]
+root           3  0.0  0.0      0     0 ?        I<   10:03   0:00 [rcu_gp]
+root           4  0.0  0.0      0     0 ?        I<   10:03   0:00 [rcu_par_gp]
+root           6  0.0  0.0      0     0 ?        I<   10:03   0:00 [kworker/0:0H-kblockd]
+root           7  0.0  0.0      0     0 ?        I    10:03   0:00 [kworker/u2:0-events_unbound]
+root           8  0.0  0.0      0     0 ?        I<   10:03   0:00 [mm_percpu_wq]
+root           9  0.0  0.0      0     0 ?        S    10:03   0:00 [ksoftirqd/0]
+root          10  0.0  0.0      0     0 ?        R    10:03   0:00 [rcu_sched]
+root          11  0.0  0.0      0     0 ?        S    10:03   0:00 [migration/0]
+root          12  0.0  0.0      0     0 ?        S    10:03   0:00 [watchdog/0]
+root          13  0.0  0.0      0     0 ?        S    10:03   0:00 [cpuhp/0]
+root          15  0.0  0.0      0     0 ?        S    10:03   0:00 [kdevtmpfs]
+root          16  0.0  0.0      0     0 ?        I<   10:03   0:00 [netns]
+root          17  0.0  0.0      0     0 ?        S    10:03   0:00 [kauditd]
+root          18  0.0  0.0      0     0 ?        S    10:03   0:00 [khungtaskd]
+root          19  0.0  0.0      0     0 ?        S    10:03   0:00 [oom_reaper]
+root          20  0.0  0.0      0     0 ?        I<   10:03   0:00 [writeback]
+root          21  0.0  0.0      0     0 ?        S    10:03   0:00 [kcompactd0]
+root          22  0.0  0.0      0     0 ?        SN   10:03   0:00 [ksmd]
+root          23  0.0  0.0      0     0 ?        SN   10:03   0:00 [khugepaged]
+root          24  0.0  0.0      0     0 ?        I<   10:03   0:00 [crypto]
+root          25  0.0  0.0      0     0 ?        I<   10:03   0:00 [kintegrityd]
+root          26  0.0  0.0      0     0 ?        I<   10:03   0:00 [kblockd]
+root          27  0.0  0.0      0     0 ?        I<   10:03   0:00 [tpm_dev_wq]
+root          28  0.0  0.0      0     0 ?        I<   10:03   0:00 [md]
+root          29  0.0  0.0      0     0 ?        I<   10:03   0:00 [edac-poller]
+root          30  0.0  0.0      0     0 ?        S    10:03   0:00 [watchdogd]
+root          49  0.0  0.0      0     0 ?        S    10:03   0:00 [kswapd0]
+root         142  0.0  0.0      0     0 ?        I<   10:03   0:00 [kthrotld]
+root         143  0.0  0.0      0     0 ?        I<   10:03   0:00 [acpi_thermal_pm]
+root         144  0.0  0.0      0     0 ?        I<   10:03   0:00 [kmpath_rdacd]
+root         145  0.0  0.0      0     0 ?        I<   10:03   0:00 [kaluad]
+root         146  0.0  0.0      0     0 ?        I<   10:03   0:00 [ipv6_addrconf]
+root         147  0.0  0.0      0     0 ?        I<   10:03   0:00 [kstrp]
+root         438  0.0  0.0      0     0 ?        I<   10:03   0:00 [ata_sff]
+root         439  0.0  0.0      0     0 ?        S    10:03   0:00 [scsi_eh_0]
+root         440  0.0  0.0      0     0 ?        I<   10:03   0:00 [scsi_tmf_0]
+root         441  0.0  0.0      0     0 ?        S    10:03   0:00 [scsi_eh_1]
+root         442  0.0  0.0      0     0 ?        I<   10:03   0:00 [scsi_tmf_1]
+root         443  0.0  0.0      0     0 ?        I    10:03   0:00 [kworker/u2:2-flush-253:2]
+root         446  0.0  0.0      0     0 ?        S    10:03   0:00 [scsi_eh_2]
+root         447  0.0  0.0      0     0 ?        I<   10:03   0:00 [scsi_tmf_2]
+root         451  0.0  0.0      0     0 ?        I<   10:03   0:00 [kworker/0:1H-kblockd]
+root         511  0.0  0.0      0     0 ?        I<   10:03   0:00 [kdmflush]
+root         520  0.0  0.0      0     0 ?        I<   10:03   0:00 [kdmflush]
+root         555  0.0  0.0      0     0 ?        S    10:03   0:00 [jbd2/dm-0-8]
+root         556  0.0  0.0      0     0 ?        I<   10:03   0:00 [ext4-rsv-conver]
+root         646  0.0  0.4  94012  8492 ?        Ss   10:03   0:02 /usr/lib/systemd/systemd-journald
+root         672  0.0  0.5 109100 10604 ?        Ss   10:03   0:02 /usr/lib/systemd/systemd-udevd
+root         726  0.0  0.0      0     0 ?        S    10:03   0:00 [irq/18-vmwgfx]
+root         727  0.0  0.0      0     0 ?        I<   10:03   0:00 [ttm_swap]
+root         728  0.0  0.0      0     0 ?        I<   10:03   0:00 [kdmflush]
+root         753  0.0  0.0      0     0 ?        S    10:03   0:00 [jbd2/sda1-8]
+root         754  0.0  0.0      0     0 ?        I<   10:03   0:00 [ext4-rsv-conver]
+root         761  0.0  0.0      0     0 ?        I<   10:03   0:00 [xfsalloc]
+root         763  0.0  0.0      0     0 ?        I<   10:03   0:00 [xfs_mru_cache]
+root         765  0.0  0.0      0     0 ?        I<   10:03   0:00 [xfs-buf/dm-2]
+root         766  0.0  0.0      0     0 ?        I<   10:03   0:00 [xfs-conv/dm-2]
+root         768  0.0  0.0      0     0 ?        I<   10:03   0:00 [xfs-cil/dm-2]
+root         769  0.0  0.0      0     0 ?        I<   10:03   0:00 [xfs-reclaim/dm-]
+root         770  0.0  0.0      0     0 ?        I<   10:03   0:00 [xfs-log/dm-2]
+root         771  0.0  0.0      0     0 ?        I<   10:03   0:00 [xfs-eofblocks/d]
+root         772  0.0  0.0      0     0 ?        S    10:03   0:00 [xfsaild/dm-2]
+rpc          795  0.0  0.2  67120  5408 ?        Ss   10:03   0:00 /usr/bin/rpcbind -w -f
+root         796  0.0  0.1  75632  1960 ?        S<sl 10:03   0:00 /sbin/auditd
+root         817  0.0  0.0      0     0 ?        I<   10:03   0:00 [rpciod]
+root         818  0.0  0.0      0     0 ?        I<   10:03   0:00 [kworker/u3:0]
+root         819  0.0  0.0      0     0 ?        I<   10:03   0:00 [xprtiod]
+root         825  0.0  0.6 462756 12356 ?        Ssl  10:03   0:00 /usr/sbin/ModemManager
+dbus         826  0.0  0.2  70876  5556 ?        Ssl  10:03   0:00 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+libstor+     827  0.0  0.1  18872  1940 ?        Ss   10:03   0:00 /usr/bin/lsmd -d
+polkitd      828  0.0  1.3 1626880 24948 ?       Ssl  10:03   0:00 /usr/lib/polkit-1/polkitd --no-debug
+root         832  0.0  0.7 422208 13888 ?        Ss   10:03   0:00 /usr/sbin/sssd -i --logger=files
+root         833  0.0  0.1 311544  3688 ?        Ssl  10:03   0:00 /usr/sbin/gssproxy -D
+root         834  0.0  0.1  17408  2164 ?        Ss   10:03   0:00 /usr/sbin/mcelog --ignorenodev --daemon --foreground
+root         836  0.0  0.2  26368  4832 ?        Ss   10:03   0:00 /usr/sbin/smartd -n -q never
+avahi        843  0.0  0.2  82744  5164 ?        Ss   10:03   0:00 avahi-daemon: running [linux.local]
+avahi        851  0.0  0.0  82620   428 ?        S    10:03   0:00 avahi-daemon: chroot helper
+rngd         853  0.2  0.3 160228  6640 ?        Ssl  10:03   0:11 /sbin/rngd -f --fill-watermark=0
+root         859  0.0  0.7 428764 14724 ?        S    10:03   0:00 /usr/libexec/sssd/sssd_be --domain implicit_files --uid 0 --gid 0 --logger=files
+root         862  0.0  2.1 498720 39580 ?        Ssl  10:03   0:03 /usr/libexec/platform-python -s /usr/sbin/firewalld --nofork --nopid
+root         863  0.0  2.0 430980 38260 ?        S    10:03   0:00 /usr/libexec/sssd/sssd_nss --uid 0 --gid 0 --logger=files
+root         865  0.0  0.4  95704  9264 ?        Ss   10:04   0:02 /usr/lib/systemd/systemd-logind
+root         880  0.0  0.9 680708 18312 ?        Ssl  10:04   0:00 /usr/sbin/NetworkManager --no-daemon
+root         894  0.0  1.6 635064 31216 ?        Ssl  10:04   0:02 /usr/libexec/platform-python -Es /usr/sbin/tuned -l -P
+root         896  0.0  0.3  92968  7088 ?        Ss   10:04   0:00 /usr/sbin/sshd -D -oCiphers=aes256-gcm@openssh.com,chacha20-poly1305@openssh.com,aes256-ctr,aes256-cbc,aes128-gcm@openssh.com,aes128-ctr,aes128-cbc -oMACs=hmac-sha2-256-etm@openssh.com,hmac-sha1-etm@openssh.com,umac-128-etm@openssh.com,hmac-sha2-512-etm@openssh.com,hmac-sha2-256,hmac-sha1,umac-128@openssh.com,hmac-sha2-512 -oGSSAPIKexAlgorithms=gss-gex-sha1-,gss-group14-sha1- -oKexAlgorithms=curve25519-sha256,curve25519-sha256@libssh.org,ecdh-sha2-nistp256,ecdh-sha2-nistp384,ecdh-sha2-nistp521,diffie-hellman-group-exchange-sha256,diffie-hellman-group14-sha256,diffie-hellman-group16-sha512,diffie-hellman-group18-sha512,diffie-hellman-group-exchange-sha1,diffie-hellman-group14-sha1 -oHostKeyAlgorithms=rsa-sha2-256,rsa-sha2-256-cert-v01@openssh.com,ecdsa-sha2-nistp256,ecdsa-sha2-nistp256-cert-v01@openssh.com,ecdsa-sha2-nistp384,ecdsa-sha2-nistp384-cert-v01@openssh.com,rsa-sha2-512,rsa-sha2-512-cert-v01@openssh.com,ecdsa-sha2-nistp521,ecdsa-sha2-nistp521-cert-v01@openssh.com,ssh-ed25519,ssh-ed25519-cert-v01@openssh.com,ssh-rsa,ssh-rsa-cert-v01@openssh.com -oPubkeyAcceptedKeyTypes=rsa-sha2-256,rsa-sha2-256-cert-v01@openssh.com,ecdsa-sha2-nistp256,ecdsa-sha2-nistp256-cert-v01@openssh.com,ecdsa-sha2-nistp384,ecdsa-sha2-nistp384-cert-v01@openssh.com,rsa-sha2-512,rsa-sha2-512-cert-v01@openssh.com,ecdsa-sha2-nistp521,ecdsa-sha2-nistp521-cert-v01@openssh.com,ssh-ed25519,ssh-ed25519-cert-v01@openssh.com,ssh-rsa,ssh-rsa-cert-v01@openssh.com -oCASignatureAlgorithms=rsa-sha2-256,ecdsa-sha2-nistp256,ecdsa-sha2-nistp384,rsa-sha2-512,ecdsa-sha2-nistp521,ssh-ed25519,ssh-rsa
+root        1113  0.0  0.1  42624  2400 ?        Ss   10:04   0:00 /usr/sbin/atd -f
+root        1114  0.0  0.1 245856  3652 ?        Ss   10:04   0:00 /usr/sbin/crond -n
+root        1115  0.0  0.3 134756  7204 ?        Ss   10:04   0:00 login -- user
+user        1405  0.0  0.5  93752  9632 ?        Ss   10:04   0:00 /usr/lib/systemd/systemd --user
+user        1410  0.0  0.2 164808  5224 ?        S    10:04   0:00 (sd-pam)
+user        1416  0.0  0.3 234612  5708 tty1     Ss   10:04   0:00 -bash
+root        1675  0.2  0.0      0     0 ?        I    10:26   0:10 [kworker/0:1-events_power_efficient]
+root        1823  0.0  0.1 244948  2944 ?        Ss   11:01   0:00 /usr/sbin/anacron -s
+root        2398  0.0  0.0      0     0 ?        I    11:26   0:00 [kworker/0:2-ata_sff]
+root        2450  0.0  0.0      0     0 ?        I    11:31   0:00 [kworker/0:0-ata_sff]
+user        2471  0.0  0.1 222488  3196 tty1     S+   11:37   0:00 /bin/bash ./script
+user        2472  0.0  0.2 267612  4068 tty1     R+   11:37   0:00 ps aux

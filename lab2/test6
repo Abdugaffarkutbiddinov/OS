@@ -1,0 +1,10 @@
+#!/bin/bash
+#cat /proc/1/status > temp6
+for pid in /proc/*; do
+if [[ $pid =~ /proc/[0-9]+ ]]; then
+awk -v pid=$pid '/VmSize/ {printf "%s %s\n", pid,$2}' "$pid/status" >> temper
+fi
+done
+sort -n -k 2 temper | tail -n 1
+rm temper
+top -b -o VIRT | head -n 8 | tail -n 2 | awk '{printf "%s %s\n", $1, $5}'
