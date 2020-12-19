@@ -1,0 +1,36 @@
+#!/bin/bash
+
+answer=1
+mode="sum"
+(tail -f pipe) |
+while true;
+do
+  read string
+  if [[ $string == "QUIT" ]]; then
+    echo "stop handling"
+    pkill tail
+    pkill generator
+    exit 0
+  elif [[ $string == '+' ]]; then
+    mode="sum"
+    echo "sum"
+  elif [[ $string == "*" ]]; then
+    mode="multiply"
+    echo "multiply"
+   elif [[ $string =~ ^[0-9]+$ ]]; then
+    case $mode in
+      sum)
+	   let answer=$answer+$string
+	   ;;
+       multiply)
+           let answer=$answer\*$string
+           ;;
+       esac
+       echo $answer
+  else
+       echo "Invalid string"
+        pkill tail
+        pkill generator
+        exit 1
+   fi
+done

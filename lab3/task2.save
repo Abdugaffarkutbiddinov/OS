@@ -1,0 +1,14 @@
+#!/bin/bash
+pipeNew=pipeNew
+(tail -f "$pipeNew") |
+while [ 1 ]; do
+read string
+echo "$string"
+if [[ "$string" == "they are here" ]]
+then
+pkill task
+echo "saved"
+exit 1
+fi
+sleep 5
+done

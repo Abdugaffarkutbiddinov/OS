@@ -1,0 +1,6 @@
+#!/bin/bash
+
+while [ 1 ];
+do
+ let number=2*2
+done

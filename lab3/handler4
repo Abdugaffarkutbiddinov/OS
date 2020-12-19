@@ -1,0 +1,12 @@
+#!/bin/bash
+echo $$ > /pid
+sigterm() {
+       echo "Sigterm warn"
+       pkill tail
+       exit 0
+}
+trap 'sigterm' SIGTERM
+(tail -f pipe2) | while true; do
+read pid
+printf "%s" $pid >> log
+done

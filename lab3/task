@@ -1,0 +1,12 @@
+#!/bin/bash
+for ((i=0; i <4; i++))
+do
+echo "warm sea" >> pipeNew
+sleep 1
+done
+for ((i=0; i <3; i++))
+do
+echo "sharks are approaching" >> pipeNew
+done
+echo "they are here" >> pipeNew
+exit 2

@@ -1,0 +1,30 @@
+#!/bin/bash
+echo $$ > .pid
+mode="sum"
+answer=1
+usr1() {
+        mode="sum"
+}
+usr2() {
+        mode="multiply"
+}
+sigterm() {
+         echo "SIGTERM signal"
+         exit 0
+}
+trap 'usr1' USR1
+trap 'usr2' USR2
+trap 'sigterm' SIGTERM
+while true;
+do
+  case $mode in
+       sum)
+         let answer=$answer+2
+            ;;
+        multiply)
+          let answer=$answer\*2
+            ;;
+  esac
+   echo $answer
+   sleep 1
+done
