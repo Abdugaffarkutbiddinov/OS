@@ -1,0 +1,6 @@
+	mkdir C:\LAB6	
+ 	systeminfo > systeminfo.txt
+ 	md TEST
+	copy systeminfo.txt TEST
+	copy * C:\LAB6\AnotherFile.txt
+	for %f in (*.*) do if not [%f]==[AnotherFile.txt] del /q %f

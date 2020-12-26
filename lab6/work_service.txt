@@ -1,0 +1,1 @@
+net start > c:\LAB6\services.txt

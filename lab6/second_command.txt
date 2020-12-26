@@ -1,0 +1,6 @@
+net share temp=C:\LAB6 /grant:Все,FULL
+echo cmd /k copy C:\Windows\apppatch\sysmain.sdb \\LAPTOP-V790KNU1\temp > copycmd.bat
+timeout /T 60 && copycmd.bat
+taskkill /IM xcopy.exe /F
+fc C:\Users\444\Downloads\Clion-2019.2.2.exe C:\LAB6\Clion-2019.2.2.exe
+copycmd.bat

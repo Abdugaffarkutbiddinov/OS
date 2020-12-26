@@ -1,0 +1,1 @@
+cmd /k net stop Dnscache && net start > services2.txt && command2.bat && net start Dnscache

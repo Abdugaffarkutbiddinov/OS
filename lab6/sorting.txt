@@ -1,0 +1,2 @@
+ driverquery /NH > c:\LAB6\drivers.txt
+ sort /R c:\LAB6\drivers.txt > c:\LAB6\Rdrivers.txt
